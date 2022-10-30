@@ -32,6 +32,48 @@
 
 # Chapter 2. Writing and running tests
 
+## Writing and running tests
+
+- Determine the installed version of pytest.
+
+        pytest --version
+
+- There is no need to create classes; just write simple functions and plain `assert` statements.
+
+        def test_abc():
+            ...
+
+        def test_def():
+            ...
+## Running tests
+
+- You can start by executing the `pytest` command.
+
+        pytest
+
+- This will find all of the `test_*.py` and `_test.py` modules in the current directory and below and will run all of the tests found in those files.
+- You can reduce the search to specific directories (my preference):
+
+        cd tests  # a directory within datasense/
+        pytest
+
+- You can execute a specific test file.
+
+        pytest test_abc.py
+
+- You can execute a specific test within a specific file.
+
+        pytest test_abc.py::test_one
+
+- There are many other possibilities. The above two will be my choices.
+- pytest will show a more verbose output with the `-v` flag.
+
+        pytest -v
+
+- pytest will show which tests exist, without running them, using the `--collect-only` flag.
+
+        pytest --collect-only
+## Writing and running tests
 # Chapter 3. Markers and parametrization
 
 # Chapter 4. Fixtures
