@@ -25,6 +25,11 @@
 
         pytest test_fibo.py -q
 
+- You use plain assert statements to write  your checks, with detailed reporting.
+- It has automatic test discovery.
+- It has fixtures to manage test resources.
+- It has plug-ins to expand its built-in capabilities and test frameworks and applications.
+
 # Chapter 2. Writing and running tests
 
 # Chapter 3. Markers and parametrization
