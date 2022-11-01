@@ -73,7 +73,48 @@
 - pytest will show which tests exist, without running them, using the `--collect-only` flag.
 
         pytest --collect-only
-## Writing and running tests
+
+## Powerful asserts
+
+- `pytest` makes use of the built-in `assert` statement to check assumptions during testing. You do not need to remember various `self.assert*` or `self.expect*` functions.
+- pytest shows the line of the failure, as well as the variables and expressions involved in the failure, and provides specialized explanations of failures involving other data types.
+
+## Test separate from your code
+
+- I have organized my tests in a separate directory from the main package.
+
+        datasense/
+            datasense/
+                control_charts.py
+                graphs.py
+                html.py
+                __init__.py
+                msa.py
+                munging.py
+                pyxl.py
+                sequel.py
+                stats.py
+            tests/
+                test_control_charts.py
+                test_graphs.py
+                test_html.py
+                test_msa.py
+                test_munging.py
+                test_pyxl.py
+                test_sequel.py
+                test_stats.py
+            setup.py
+
+- It keeps library code and testing code separate.
+- The testing code is not included in the source package.
+
+## Usefull command-line options
+
+- Keyword expressions
+
+        pytest -v -k "file"   # runs def test*() that contain "file" in the `item id`, that is, in the def test*() name
+        pytest --durations=N  # provides a summary of the N longest running tets, or zero to see all tests
+
 # Chapter 3. Markers and parametrization
 
 # Chapter 4. Fixtures
