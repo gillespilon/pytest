@@ -119,6 +119,23 @@
 
 # Chapter 3. Markers and parametrization
 
+- Marks allow us to selectively run tests based on applied and built-in marks, and to attache general data to test functions
+- Test parametrization allows us to easily apply the same test function to a set of input values. This avoids duplicating test code and makes it easy to add new test cases that may appear as our code evolves.
+
+## Mark basics
+
+- pytest allows you to mark functions and classes with metadata.
+- These metadata can be used to selectively run tests and are also available for figures and plugins, to perform different tasks.
+
+    from pytest import mark
+    @mark.timeout(10, method="thread")  # the test should take < 10 s
+
+- Then from the command line:
+
+        pytest -m timeout  # run all tests with the timeout mark
+
+- Marks can be applied to classes. This will apply that same mark to all tests methods in that class, avoiding having to copy and paste the mark code over all test methods. All subclasses will inherit the mark.
+
 # Chapter 4. Fixtures
 
 # Chapter 5. Plugins
