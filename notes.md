@@ -112,8 +112,10 @@
 
 - Keyword expressions
 
-        pytest -v -k "file"   # runs def test*() that contain "file" in the `item id`, that is, in the def test*() name
-        pytest --durations=N  # provides a summary of the N longest running tets, or zero to see all tests
+        " runs def test*() that contain "file" in the `item id`, that is, in the def test*() name
+        pytest -v -k "file"
+        " provides a summary of the N longest running tets, or zero to see all tests
+        pytest --durations=N
 
 # Chapter 3. Markers and parametrization
 
